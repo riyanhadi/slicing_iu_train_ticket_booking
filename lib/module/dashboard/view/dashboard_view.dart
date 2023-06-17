@@ -3,7 +3,7 @@ import 'package:slicing_iu_train_ticket_booking/core.dart';
 import 'package:slicing_iu_train_ticket_booking/shared/widget/category_picker.dart';
 import 'package:slicing_iu_train_ticket_booking/shared/widget/datepicker.dart';
 import 'package:slicing_iu_train_ticket_booking/shared/widget/dropdown.dart';
-import '../controller/dashboard_controller.dart';
+import 'package:slicing_iu_train_ticket_booking/state_util.dart';
 
 class DashboardView extends StatefulWidget {
   const DashboardView({Key? key}) : super(key: key);
@@ -42,20 +42,20 @@ class DashboardView extends StatefulWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                "Book Your Ticket\nToday",
+                "Book Your Ticket Today",
                 style: TextStyle(
                   fontSize: 26.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(
-                height: 22.0,
+                height: 16.0,
               ),
               Theme(
                 data: ThemeData.light(),
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  padding: const EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.all(15.0),
                   decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.all(
@@ -118,9 +118,6 @@ class DashboardView extends StatefulWidget {
                           }
                         ],
                         onChanged: (value, label) {},
-                      ),
-                      const SizedBox(
-                        height: 5.0,
                       ),
                       Row(
                         children: [
@@ -257,7 +254,7 @@ class DashboardView extends StatefulWidget {
                         ],
                       ),
                       const SizedBox(
-                        height: 15.0,
+                        height: 5.0,
                       ),
                       QDropdownField(
                         label: "Train Classes",
@@ -292,10 +289,13 @@ class DashboardView extends StatefulWidget {
                               borderRadius: BorderRadius.circular(12),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () => Get.to(const BookingDetailView()),
                           child: const Text(
                             "Continue",
-                            style: TextStyle(color: Color(0xff383d47)),
+                            style: TextStyle(
+                              color: Color(0xff383d47),
+                              fontSize: 16,
+                            ),
                           ),
                         ),
                       ),
