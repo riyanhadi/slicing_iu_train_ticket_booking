@@ -289,7 +289,7 @@ class DashboardView extends StatefulWidget {
                               borderRadius: BorderRadius.circular(12),
                             ),
                           ),
-                          onPressed: () => Get.to(const BookingDetailView()),
+                          onPressed: () => Get.to(const SeatPickerView()),
                           child: const Text(
                             "Continue",
                             style: TextStyle(
